@@ -30,7 +30,7 @@ public class TimingTests {
 		for(int i = 0 ; i < ITERATIONS ; i++){
 			final long startTime = System.currentTimeMillis();
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);	
-			byte[] ciphertext = cipher.doFinal(plainText);
+			cipher.doFinal(plainText);
 			final long endTime = System.currentTimeMillis();
 			times[i] = endTime - startTime;
 		}
@@ -50,7 +50,7 @@ public class TimingTests {
 		for(int i = 0 ; i < ITERATIONS ; i++){
 			final long startTime = System.currentTimeMillis();
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);	
-			byte[] ciphertext = cipher.doFinal(plainText);
+			cipher.doFinal(plainText);
 			final long endTime = System.currentTimeMillis();
 			times[i] = endTime - startTime;
 		}
@@ -68,7 +68,7 @@ public class TimingTests {
 		
 		for(int i = 0 ; i < ITERATIONS ; i++){
 			final long startTime = System.currentTimeMillis();
-			byte[] ciphertext = cryptoEngine.encrypt(plainText, secretKey);
+			cryptoEngine.encrypt(plainText, secretKey);
 			final long endTime = System.currentTimeMillis();
 			times[i] = endTime - startTime;
 		}

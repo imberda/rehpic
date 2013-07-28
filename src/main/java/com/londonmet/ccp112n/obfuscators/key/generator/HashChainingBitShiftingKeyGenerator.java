@@ -22,7 +22,7 @@ public class HashChainingBitShiftingKeyGenerator implements KeyGenerator {
 	private final KeyBasedPermutator permutator;
 	
 	public enum ShiftDirection {
-		LEFT, RIGHT;
+		LEFT, RIGHT
 	}
 	
 	/**

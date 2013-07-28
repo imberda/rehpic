@@ -71,7 +71,8 @@ public class CryptoEngine {
 	
 	/**
 	 * 
-	 * @param input The input which will act as a seed for the secret key generation algorithm. This must satisfy null != input > 0
+	 * @param keyIdentifier
+     * @param password
 	 * @return A byte array containing the secret key
 	 */
 	public byte[] createSecretKey(final byte[] keyIdentifier, final byte[] password){
@@ -119,7 +120,7 @@ public class CryptoEngine {
 	 * Sub-keys (or round keys) are generated from the supplied secret key. The number generated is 
 	 * equal to the configured number of rounds within the cipher.
 	 * 
-	 * @param ciphertext A byte array of representing cipher text to be encrypted. The length must be an exact multiple of the block size
+	 * @param cipherText A byte array of representing cipher text to be encrypted. The length must be an exact multiple of the block size
 	 * @param secretKey A byte array of arbitrary length representing the secret key used to generate subkeys
 	 * @return plain text recovered from the cipher text
 	 */	

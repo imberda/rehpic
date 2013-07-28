@@ -105,7 +105,7 @@ public class PaddingServiceImpl implements PaddingService {
 	 * Calculates the number of padding bytes required in order to turn the input data bytes
 	 * into an exact multiple of the block size
 	 * 
-	 * @param inputSize The number of bytes within the input data
+	 * @param inputSizeInByte The number of bytes within the input data
 	 * @return the number of padding bytes required to make input a multiple of the block size
 	 */
 	private int getNumberOfPaddingBytes(final int inputSizeInByte){

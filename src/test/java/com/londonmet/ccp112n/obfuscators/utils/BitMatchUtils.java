@@ -4,7 +4,7 @@ import java.util.BitSet;
 
 public class BitMatchUtils {
 	
-	public static final double percentageBitMatches(final byte[] data1, final byte[] data2){
+	public static double percentageBitMatches(final byte[] data1, final byte[] data2){
 		
 		assert data1.length == data2.length;
 		
