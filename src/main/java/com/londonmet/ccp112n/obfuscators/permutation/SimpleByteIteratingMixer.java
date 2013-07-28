@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
 
+@Deprecated
 public class SimpleByteIteratingMixer implements MixingPermutator {
 	
 	private static Map<Integer, Integer> MIX_MAP  = new HashMap<Integer, Integer>();
