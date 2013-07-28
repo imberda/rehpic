@@ -1,10 +1,10 @@
 package com.londonmet.ccp112n.obfuscators.permutation;
 
+import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
+
 import java.util.BitSet;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
 
 @Deprecated
 public class SimpleByteIteratingMixer implements MixingPermutator {

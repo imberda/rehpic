@@ -1,11 +1,11 @@
 package com.londonmet.ccp112n.obfuscators.key.schedule;
 
+import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.BitSet;
-
-import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
 
 /**
  * Given a secret key as an input, this class generates series of sub-keys (or round-keys)

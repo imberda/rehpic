@@ -1,14 +1,13 @@
 package com.londonmet.ccp112n.obfuscators.round;
 
-import java.util.Arrays;
-import java.util.BitSet;
-
-import org.apache.commons.lang3.ArrayUtils;
-
 import com.londonmet.ccp112n.obfuscators.permutation.KeyBasedPermutator;
 import com.londonmet.ccp112n.obfuscators.permutation.MixingPermutator;
 import com.londonmet.ccp112n.obfuscators.substitution.KeyBasedSubstitutionBox;
 import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.util.Arrays;
+import java.util.BitSet;
 
 /**
  * 

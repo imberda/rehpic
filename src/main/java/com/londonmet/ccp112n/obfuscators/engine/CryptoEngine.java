@@ -1,7 +1,5 @@
 package com.londonmet.ccp112n.obfuscators.engine;
 
-import java.security.NoSuchAlgorithmException;
-
 import com.londonmet.ccp112n.obfuscators.cipherblockmode.CipherBlockChainingMode;
 import com.londonmet.ccp112n.obfuscators.cipherblockmode.CipherBlockMode;
 import com.londonmet.ccp112n.obfuscators.cipherblockmode.InitialistionVectorGenerator;
@@ -12,11 +10,16 @@ import com.londonmet.ccp112n.obfuscators.key.schedule.HashChainingSubKeyGenerato
 import com.londonmet.ccp112n.obfuscators.key.schedule.SubKeyGenerator;
 import com.londonmet.ccp112n.obfuscators.padding.PaddingService;
 import com.londonmet.ccp112n.obfuscators.padding.PaddingServiceImpl;
-import com.londonmet.ccp112n.obfuscators.permutation.*;
+import com.londonmet.ccp112n.obfuscators.permutation.KeyBasedBitShiftPermutator;
+import com.londonmet.ccp112n.obfuscators.permutation.KeyBasedPermutator;
+import com.londonmet.ccp112n.obfuscators.permutation.MixingPermutator;
+import com.londonmet.ccp112n.obfuscators.permutation.VariableLengthMixingPermutator;
 import com.londonmet.ccp112n.obfuscators.round.RoundFunction;
 import com.londonmet.ccp112n.obfuscators.round.RoundFunctionImpl;
 import com.londonmet.ccp112n.obfuscators.substitution.KeyBasedInvolutionSubstitutionBox;
 import com.londonmet.ccp112n.obfuscators.substitution.KeyBasedSubstitutionBox;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * This class acts as the entry point into the project and is the class instantiated 

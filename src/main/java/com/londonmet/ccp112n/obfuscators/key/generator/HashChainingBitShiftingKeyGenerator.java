@@ -1,11 +1,10 @@
 package com.londonmet.ccp112n.obfuscators.key.generator;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
+import com.londonmet.ccp112n.obfuscators.permutation.KeyBasedPermutator;
 import org.apache.commons.lang3.ArrayUtils;
 
-import com.londonmet.ccp112n.obfuscators.permutation.KeyBasedPermutator;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * 

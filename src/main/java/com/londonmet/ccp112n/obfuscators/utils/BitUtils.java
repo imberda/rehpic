@@ -1,11 +1,9 @@
 package com.londonmet.ccp112n.obfuscators.utils;
 
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Arrays;
 import java.util.BitSet;
-
-import org.apache.commons.lang3.StringUtils;
 
 /*
  ****************************************************************************************************************

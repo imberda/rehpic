@@ -1,8 +1,8 @@
 package com.londonmet.ccp112n.obfuscators.substitution;
 
-import java.util.BitSet;
-
 import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
+
+import java.util.BitSet;
 
 /**
  * 

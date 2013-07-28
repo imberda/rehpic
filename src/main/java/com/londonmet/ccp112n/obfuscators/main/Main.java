@@ -1,12 +1,12 @@
 package com.londonmet.ccp112n.obfuscators.main;
 
-import static org.junit.Assert.assertArrayEquals;
+import com.londonmet.ccp112n.obfuscators.engine.CryptoEngine;
+import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
-import com.londonmet.ccp112n.obfuscators.engine.CryptoEngine;
-import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * 
