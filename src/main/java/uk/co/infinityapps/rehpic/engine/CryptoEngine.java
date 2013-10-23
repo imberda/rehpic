@@ -47,15 +47,9 @@ public class CryptoEngine {
 	private final int blockSizeInBytes;
 	private final int numberOfRounds;
 
-	private MixingPermutator mixingPermutator;
-	private KeyBasedPermutator keyBasedPermutator;
 	private KeyGenerator keyGenerator;
 	private SubKeyGenerator subKeyGenerator;
-	private KeyBasedSubstitutionBox substitutionBox;
-	private RoundFunction roundFunction;
-	private PaddingService paddingService;
 	private CipherBlockMode cipherBlockMode;
-	private InitialistionVectorGenerator initialistionVectorGenerator;
 
 	/**
 	 *
@@ -66,18 +60,28 @@ public class CryptoEngine {
 	public CryptoEngine(final int blockSizeInBytes, final int numberOfRounds) throws NoSuchAlgorithmException {
 		this.blockSizeInBytes = blockSizeInBytes;
 		this.numberOfRounds = numberOfRounds;
-		this.mixingPermutator = new VariableLengthMixingPermutator();
-		this.keyBasedPermutator = new KeyBasedBitShiftPermutator();
-		this.keyGenerator = new HashChainingBitShiftingKeyGenerator(keyBasedPermutator);
+
+        final MixingPermutator mixingPermutator = new VariableLengthMixingPermutator();
+		final KeyBasedPermutator keyBasedPermutator = new KeyBasedBitShiftPermutator();
+        final KeyBasedSubstitutionBox substitutionBox = new KeyBasedInvolutionSubstitutionBox();
+        final PaddingService paddingService = new PaddingServiceImpl(blockSizeInBytes);
+        final RoundFunction roundFunction = new RoundFunctionImpl(keyBasedPermutator, substitutionBox, mixingPermutator);
+        final InitialistionVectorGenerator initialistionVectorGenerator = new InitialistionVectorGeneratorImpl(blockSizeInBytes);
+
+        this.keyGenerator = new HashChainingBitShiftingKeyGenerator(keyBasedPermutator);
 		this.subKeyGenerator = new HashChainingSubKeyGenerator(blockSizeInBytes);
-		this.substitutionBox = new KeyBasedInvolutionSubstitutionBox();
-		this.roundFunction = new RoundFunctionImpl(keyBasedPermutator, substitutionBox, mixingPermutator);
-		this.paddingService = new PaddingServiceImpl(blockSizeInBytes);
-		this.initialistionVectorGenerator = new InitialistionVectorGeneratorImpl(blockSizeInBytes);
 		this.cipherBlockMode = new CipherBlockChainingMode(roundFunction, paddingService, initialistionVectorGenerator);
 	}
 
-	/**
+    public CryptoEngine(int blockSizeInBytes, int numberOfRounds, KeyGenerator keyGenerator, SubKeyGenerator subKeyGenerator, CipherBlockMode cipherBlockMode) {
+        this.blockSizeInBytes = blockSizeInBytes;
+        this.numberOfRounds = numberOfRounds;
+        this.keyGenerator = keyGenerator;
+        this.subKeyGenerator = subKeyGenerator;
+        this.cipherBlockMode = cipherBlockMode;
+    }
+
+    /**
 	 *
 	 * @param keyIdentifier
      * @param password
@@ -138,56 +142,35 @@ public class CryptoEngine {
 		return cipherBlockMode.decrypt(cipherText, subKeys);
 	}
 
-	/**
-	 *
-	 * @return The size of each block in bytes
-	 */
 	public int getBlockSizeInBytes() {
 		return blockSizeInBytes;
 	}
 
-	/**
-	 *
-	 * @return The number of rounds
-	 */
 	public int getNumberOfRounds() {
 		return numberOfRounds;
 	}
 
-	public MixingPermutator getMixingPermutator() {
-		return mixingPermutator;
-	}
+    public KeyGenerator getKeyGenerator() {
+        return keyGenerator;
+    }
 
-	public KeyBasedPermutator getKeyBasedPermutator() {
-		return keyBasedPermutator;
-	}
+    public void setKeyGenerator(KeyGenerator keyGenerator) {
+        this.keyGenerator = keyGenerator;
+    }
 
-	public KeyGenerator getKeyGenerator() {
-		return keyGenerator;
-	}
+    public SubKeyGenerator getSubKeyGenerator() {
+        return subKeyGenerator;
+    }
 
-	public SubKeyGenerator getSubKeyGenerator() {
-		return subKeyGenerator;
-	}
+    public void setSubKeyGenerator(SubKeyGenerator subKeyGenerator) {
+        this.subKeyGenerator = subKeyGenerator;
+    }
 
-	public KeyBasedSubstitutionBox getSubstitutionBox() {
-		return substitutionBox;
-	}
+    public CipherBlockMode getCipherBlockMode() {
+        return cipherBlockMode;
+    }
 
-	public RoundFunction getRoundFunction() {
-		return roundFunction;
-	}
-
-	public PaddingService getPaddingService() {
-		return paddingService;
-	}
-
-	public CipherBlockMode getCipherBlockMode() {
-		return cipherBlockMode;
-	}
-
-	public InitialistionVectorGenerator getInitialistionVectorGenerator() {
-		return initialistionVectorGenerator;
-	}
-
+    public void setCipherBlockMode(CipherBlockMode cipherBlockMode) {
+        this.cipherBlockMode = cipherBlockMode;
+    }
 }
