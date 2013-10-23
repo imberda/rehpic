@@ -1,6 +1,6 @@
 # rehpic
 
-Rehpic (which is an anagram of Cipher) is a symmetric key cipher). It is not meant to be used commercially (or even seriously). It was originally created as part of a coursework submission for an MSc Computer Science module in Cryptography.
+Rehpic (which is an anagram of Cipher) is a symmetric key cipher. It is not meant to be used commercially (or even seriously). It was originally created as part of a coursework submission for an MSc Computer Science module in Cryptography.
 
 # Quick Start
 ```java
