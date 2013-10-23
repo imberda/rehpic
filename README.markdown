@@ -2,6 +2,8 @@
 
 Rehpic (which is an anagram of Cipher) is a symmetric key cipher. It is not meant to be used commercially (or even seriously). It was originally created as part of a coursework submission for an MSc Computer Science module in Cryptography.
 
+The hope is that other students tasked with a similar assignment may find this work as useful starting point.
+
 # Quick Start
 ```java
 import uk.co.infinityapps.rehpic.engine.CryptoEngine;
