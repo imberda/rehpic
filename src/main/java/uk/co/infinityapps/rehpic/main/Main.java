@@ -59,7 +59,7 @@ public class Main {
 		final CryptoEngine cryptoEngine = new CryptoEngine(BLOCK_SIZE_IN_BYTES, NUMBER_OF_ROUNDS); 
 		
 		for(int i = 0 ; i < Integer.MAX_VALUE ; i++){
-			final byte[] secretKey = cryptoEngine.createSecretKey(getVariableLengthRandomData(), "user1".getBytes());
+			final byte[] secretKey = cryptoEngine.createSecretKey(getVariableLengthRandomData(), "secret".getBytes());
 			final byte[] plainText = getVariableLengthRandomData();
 			final byte[] cipherText = cryptoEngine.encrypt(plainText, secretKey);
 			final byte[] recoveredPlainText = cryptoEngine.decrypt(cipherText, secretKey);
@@ -75,7 +75,7 @@ public class Main {
 	
 	private static byte[] getVariableLengthRandomData(){
 		final int numberOfBytes = random.nextInt(MAX_DATA_LENGTH_IN_BYTES) + 1;
-		byte[] bytes = new byte[numberOfBytes];
+		final byte[] bytes = new byte[numberOfBytes];
 		random.nextBytes(bytes);
 		return bytes;
 	}
