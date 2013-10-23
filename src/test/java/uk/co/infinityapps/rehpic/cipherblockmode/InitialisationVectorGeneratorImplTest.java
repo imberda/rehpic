@@ -7,9 +7,9 @@ import org.junit.Test;
 
 import uk.co.infinityapps.rehpic.utils.BitMatchUtils;
 
-public class InitialistionVectorGeneratorImplTest {
+public class InitialisationVectorGeneratorImplTest {
 
-	private final InitialistionVectorGenerator generator = new InitialistionVectorGeneratorImpl(32);
+	private final InitialisationVectorGenerator generator = new InitialisationVectorGeneratorImpl(32);
 	
 	@Test
 	public void testGetIV() {

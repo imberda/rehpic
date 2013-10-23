@@ -8,12 +8,12 @@ import java.security.SecureRandom;
  * @author imberda
  * @version 1.0
  */
-public class InitialistionVectorGeneratorImpl implements InitialistionVectorGenerator {
+public class InitialisationVectorGeneratorImpl implements InitialisationVectorGenerator {
 	
 	private final SecureRandom secureRandom;
 	private final int lengthInBytes;
 	
-	public InitialistionVectorGeneratorImpl(final int lengthInBytes) {
+	public InitialisationVectorGeneratorImpl(final int lengthInBytes) {
 		this.lengthInBytes = lengthInBytes;
 		this.secureRandom = new SecureRandom();
 	}

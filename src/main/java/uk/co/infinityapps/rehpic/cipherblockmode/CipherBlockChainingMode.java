@@ -26,17 +26,17 @@ public class CipherBlockChainingMode implements CipherBlockMode {
 	
 	private final RoundFunction roundFunction;
 	private final PaddingService paddingService;
-	private final InitialistionVectorGenerator initialistionVectorGenerator;
+	private final InitialisationVectorGenerator initialisationVectorGenerator;
 	
-	public CipherBlockChainingMode(final RoundFunction roundFunction, final PaddingService paddingService, final InitialistionVectorGenerator initialistionVectorGenerator) {
+	public CipherBlockChainingMode(final RoundFunction roundFunction, final PaddingService paddingService, final InitialisationVectorGenerator initialisationVectorGenerator) {
 		this.roundFunction = roundFunction;
 		this.paddingService = paddingService;
-		this.initialistionVectorGenerator = initialistionVectorGenerator;
+		this.initialisationVectorGenerator = initialisationVectorGenerator;
 	}
 	
 	@Override
 	public byte[] encrypt(byte[] input, byte[][] subKeys) {
-		final byte[] initialisationVector = initialistionVectorGenerator.getIV();
+		final byte[] initialisationVector = initialisationVectorGenerator.getIV();
 		final byte[] output = this.encrypt(input, subKeys, initialisationVector);
 		return ArrayUtils.addAll(initialisationVector, output);
 	}

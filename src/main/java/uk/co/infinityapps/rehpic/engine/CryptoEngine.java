@@ -2,8 +2,8 @@ package uk.co.infinityapps.rehpic.engine;
 
 import uk.co.infinityapps.rehpic.cipherblockmode.CipherBlockChainingMode;
 import uk.co.infinityapps.rehpic.cipherblockmode.CipherBlockMode;
-import uk.co.infinityapps.rehpic.cipherblockmode.InitialistionVectorGenerator;
-import uk.co.infinityapps.rehpic.cipherblockmode.InitialistionVectorGeneratorImpl;
+import uk.co.infinityapps.rehpic.cipherblockmode.InitialisationVectorGenerator;
+import uk.co.infinityapps.rehpic.cipherblockmode.InitialisationVectorGeneratorImpl;
 import uk.co.infinityapps.rehpic.key.generator.HashChainingBitShiftingKeyGenerator;
 import uk.co.infinityapps.rehpic.key.generator.KeyGenerator;
 import uk.co.infinityapps.rehpic.key.schedule.HashChainingSubKeyGenerator;
@@ -66,11 +66,11 @@ public class CryptoEngine {
         final KeyBasedSubstitutionBox substitutionBox = new KeyBasedInvolutionSubstitutionBox();
         final PaddingService paddingService = new PaddingServiceImpl(blockSizeInBytes);
         final RoundFunction roundFunction = new RoundFunctionImpl(keyBasedPermutator, substitutionBox, mixingPermutator);
-        final InitialistionVectorGenerator initialistionVectorGenerator = new InitialistionVectorGeneratorImpl(blockSizeInBytes);
+        final InitialisationVectorGenerator initialisationVectorGenerator = new InitialisationVectorGeneratorImpl(blockSizeInBytes);
 
         this.keyGenerator = new HashChainingBitShiftingKeyGenerator(keyBasedPermutator);
 		this.subKeyGenerator = new HashChainingSubKeyGenerator(blockSizeInBytes);
-		this.cipherBlockMode = new CipherBlockChainingMode(roundFunction, paddingService, initialistionVectorGenerator);
+		this.cipherBlockMode = new CipherBlockChainingMode(roundFunction, paddingService, initialisationVectorGenerator);
 	}
 
     public CryptoEngine(int blockSizeInBytes, int numberOfRounds, KeyGenerator keyGenerator, SubKeyGenerator subKeyGenerator, CipherBlockMode cipherBlockMode) {
