@@ -10,7 +10,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 /**
  * 
- * @author London Met, Module: CCP112N, Group: 'The Obfuscators', Year: Autumn 2011
+ * @author imberda
  * @version 1.0
  * 
  * Simple command line runnable program to demonstrate the usage of the CryptoEngine.

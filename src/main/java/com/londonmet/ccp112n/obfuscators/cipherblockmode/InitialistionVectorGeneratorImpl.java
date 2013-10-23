@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 /**
  * 
  * 
- * @author London Met, Module: CCP112N, Group: 'The Obfuscators', Year: Autumn 2011
+ * @author imberda
  * @version 1.0
  */
 public class InitialistionVectorGeneratorImpl implements InitialistionVectorGenerator {

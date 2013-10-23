@@ -38,7 +38,7 @@ import java.security.NoSuchAlgorithmException;
  *  public methods in this class. Similarly all public methods return byte[] and the client
  *  is responsible for the conversion into the desired data type.
  *  
- * @author London Met, Module: CCP112N, Group: 'The Obfuscators', Year: Autumn 2011
+ * @author imberda
  * @version 1.0
  * 
  */
@@ -47,16 +47,15 @@ public class CryptoEngine {
 	private final int blockSizeInBytes;
 	private final int numberOfRounds;
 
-	private final MixingPermutator mixingPermutator;
-	private final KeyBasedPermutator keyBasedPermutator;
-	private final KeyGenerator keyGenerator;
-	private final SubKeyGenerator subKeyGenerator;
-	private final KeyBasedSubstitutionBox substitutionBox;
-	private final RoundFunction roundFunction;
-	private final PaddingService paddingService;
-	private final CipherBlockMode cipherBlockMode;
-	private final InitialistionVectorGenerator initialistionVectorGenerator;
-
+	private MixingPermutator mixingPermutator;
+	private KeyBasedPermutator keyBasedPermutator;
+	private KeyGenerator keyGenerator;
+	private SubKeyGenerator subKeyGenerator;
+	private KeyBasedSubstitutionBox substitutionBox;
+	private RoundFunction roundFunction;
+	private PaddingService paddingService;
+	private CipherBlockMode cipherBlockMode;
+	private InitialistionVectorGenerator initialistionVectorGenerator;
 
 	/**
 	 *

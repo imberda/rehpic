@@ -5,7 +5,7 @@ import com.londonmet.ccp112n.obfuscators.utils.BitUtils;
 /**
  * 
  * 
- * @author London Met, Module: CCP112N, Group: 'The Obfuscators', Year: Autumn 2011
+ * @author imberda
  * @version 1.0
  */
 public class KeyBasedBitShiftPermutator implements KeyBasedPermutator {

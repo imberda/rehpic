@@ -12,7 +12,7 @@ import java.util.BitSet;
 /**
  * 
  * 
- * @author London Met, Module: CCP112N, Group: 'The Obfuscators', Year: Autumn 2011
+ * @author imberda
  * @version 1.0
  */
 public class RoundFunctionImpl implements RoundFunction {

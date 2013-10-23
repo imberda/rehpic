@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Padding implementation that uses Byte.MAX_VALUE as the "marker" to distinguish between padding and real data. It 
  * uses zeros for the padded bytes themselves.
 
- * @author London Met, Module: CCP112N, Group: 'The Obfuscators', Year: Autumn 2011
+ * @author imberda
  * @version 1.0
  *
  *
