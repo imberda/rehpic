@@ -25,7 +25,7 @@ public class Main {
 		final CryptoEngine cryptoEngine = new CryptoEngine(BLOCK_SIZE_IN_BYTES, NUMBER_OF_ROUNDS); 
 		
 		for(int i = 0 ; i < Integer.MAX_VALUE ; i++){
-			final byte[] secretKey = cryptoEngine.createSecretKey(getVariableLengthRandomData(), "user1".getBytes());
+			final byte[] secretKey = cryptoEngine.createSecretKey(getVariableLengthRandomData(), "secretKeySeedText".getBytes());
 			final byte[] plainText = getVariableLengthRandomData();
 			final byte[] cipherText = cryptoEngine.encrypt(plainText, secretKey);
 			final byte[] recoveredPlainText = cryptoEngine.decrypt(cipherText, secretKey);
