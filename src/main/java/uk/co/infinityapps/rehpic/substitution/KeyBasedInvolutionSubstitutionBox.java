@@ -90,7 +90,7 @@ public class KeyBasedInvolutionSubstitutionBox implements KeyBasedSubstitutionBo
 		rowId += getValue(bitSet.get(offset++));
 		rowId += getValue(bitSet.get(offset++));
 		rowId += getValue(bitSet.get(offset++));
-		rowId += getValue(bitSet.get(offset++));
+		rowId += getValue(bitSet.get(offset));
 		return rowId;
 	}
 	
