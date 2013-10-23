@@ -6,10 +6,7 @@ import uk.co.infinityapps.rehpic.key.generator.HashChainingBitShiftingKeyGenerat
 import uk.co.infinityapps.rehpic.key.generator.KeyGenerator;
 import uk.co.infinityapps.rehpic.key.schedule.HashChainingSubKeyGenerator;
 import uk.co.infinityapps.rehpic.key.schedule.SubKeyGenerator;
-import uk.co.infinityapps.rehpic.permutation.KeyBasedBitShiftPermutator;
-import uk.co.infinityapps.rehpic.permutation.KeyBasedPermutator;
-import uk.co.infinityapps.rehpic.permutation.MixingPermutator;
-import uk.co.infinityapps.rehpic.permutation.SimpleByteIteratingMixer;
+import uk.co.infinityapps.rehpic.permutation.*;
 import uk.co.infinityapps.rehpic.substitution.KeyBasedInvolutionSubstitutionBox;
 import uk.co.infinityapps.rehpic.substitution.KeyBasedSubstitutionBox;
 import uk.co.infinityapps.rehpic.utils.BitMatchUtils;
@@ -26,7 +23,7 @@ public class RoundFunctionImplTest {
 	public void testFunctionIsReversable() throws Exception {
 		final KeyBasedPermutator permutator = new KeyBasedBitShiftPermutator();
 		final KeyBasedSubstitutionBox substitutionBox = new KeyBasedInvolutionSubstitutionBox();
-		final MixingPermutator mixingPermutator = new SimpleByteIteratingMixer();
+		final MixingPermutator mixingPermutator = new VariableLengthMixingPermutator();
 		final RoundFunction function = new RoundFunctionImpl(permutator, substitutionBox, mixingPermutator);
 		final KeyGenerator keyGenerator = new HashChainingBitShiftingKeyGenerator(permutator);
 		final SubKeyGenerator subKeyGenerator = new HashChainingSubKeyGenerator(32);
